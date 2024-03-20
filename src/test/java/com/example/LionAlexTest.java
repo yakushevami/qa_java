@@ -11,10 +11,10 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LionAlexTest {
-    @Mock
+   //@Mock
     private Feline feline;
     private LionAlex lionAlex;
-    private final int expectedLionChildren = 0;
+    private final int expectedKittens = 0;
     private final List<String> expectedFriends = List.of("Марти", "Глория", "Мелман");
     private final String expectedPlace = "Нью-Йоркский зоопарк";
 
@@ -24,7 +24,7 @@ public class LionAlexTest {
         int actual = lionAlex.getKittens();
 
         assertEquals("Несоответствующее количество львят",
-                expectedLionChildren, actual);
+                expectedKittens, actual);
     }
 
     @Test
@@ -42,6 +42,6 @@ public class LionAlexTest {
         String actual = lionAlex.getHomeLocation();
 
         assertEquals("Некорректное место проживания льва",
-                expectedPlace,actual);
+                expectedPlace, actual);
     }
 }
