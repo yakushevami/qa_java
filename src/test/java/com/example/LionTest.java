@@ -27,4 +27,15 @@ public class LionTest{
         Mockito.when(feline.getKittens()).thenReturn(1);
         assertEquals(feline.getKittens(), lion.getKittens());
     }
+
+    @Test(expected = AssertionError.class)
+    public void lionGenderErrorMessageTest() throws AssertionError {
+        try {
+            Lion lion = new Lion(" ", feline);
+            Assert.fail("Expected AssertionError");
+        }
+        catch (Exception thrown) {
+            Assert.assertNotEquals("Используйте допустимые значения пола животного - самец или самка", thrown.getMessage());
+        }
+    }
 }

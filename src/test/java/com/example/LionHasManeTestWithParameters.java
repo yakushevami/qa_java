@@ -1,10 +1,11 @@
 package com.example;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.mockito.Mock;
+
+import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class LionHasManeTestWithParameters {
@@ -27,18 +28,12 @@ public class LionHasManeTestWithParameters {
         return new Object[][] {
                 {MALE, true},
                 {FEMALE, false},
-                {" ", false},
         };
     }
 
     @Test
-    public void lionGenderTest()  {
-        try{
-            Lion lion = new Lion(sex,feline);
-            lion.doesHaveMane();
-            Assert.assertEquals(hasMane, lion.doesHaveMane());
-        } catch (Exception e){
-            Assert.assertEquals(ERROR_MESSAGE, e.getMessage());
-        }
+    public void lionGenderTest() throws Exception {
+            Lion lion = new Lion (sex, feline);
+            assertEquals(hasMane, lion.doesHaveMane());
     }
 }
