@@ -2,7 +2,6 @@ package com.example;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
@@ -11,7 +10,6 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LionAlexTest {
-   //@Mock
     private Feline feline;
     private LionAlex lionAlex;
     private final int expectedKittens = 0;

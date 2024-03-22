@@ -28,14 +28,10 @@ public class LionTest{
         assertEquals(feline.getKittens(), lion.getKittens());
     }
 
-    @Test(expected = AssertionError.class)
-    public void lionGenderErrorMessageTest() throws AssertionError {
-        try {
-            Lion lion = new Lion(" ", feline);
-            Assert.fail("Expected AssertionError");
-        }
-        catch (Exception thrown) {
-            Assert.assertNotEquals("Используйте допустимые значения пола животного - самец или самка", thrown.getMessage());
-        }
+    @Test
+    public void getLionGenderExceptionTest() {
+        String expectedString = "Используйте допустимые значения пола животного - самец или самка";
+        Exception exception = Assert.assertThrows(Exception.class, () -> new Lion(" ", feline));
+        Assert.assertEquals(expectedString, exception.getMessage());
     }
 }
